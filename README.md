@@ -57,7 +57,7 @@ Response:
 Use one command from project root:
 
 ```bash
-./start.command
+./start.command (Mac /Linux)
 ```
 
 The script will:
