@@ -76,7 +76,7 @@ start.bat
 
 The script will:
 
-1. Check if required ports are occupied.
+1. Check if  required ports are occupied.
 2. Ask for confirmation before freeing API/UI ports when needed.
 3. Create Python virtual environment if missing.
 4. Install backend dependencies from `backend/requirements.txt`.
