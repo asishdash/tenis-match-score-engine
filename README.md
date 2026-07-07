@@ -27,7 +27,9 @@ npm --version
 - `backend/requirements.txt`: Python dependencies
 - `frontend/src/App.jsx`: UI and API integration
 - `frontend/src/styles.css`: UI styles
-- `start.command`: starts backend and frontend together
+- `start.command`: starts backend and frontend together (Mac/Linux)
+- `start.ps1`: starts backend and frontend together (Windows PowerShell)
+- `start.bat`: Windows wrapper to run `start.ps1`
 
 ## API Contract
 
@@ -56,14 +58,26 @@ Response:
 
 Use one command from project root:
 
-```bash
-./start.command (Mac /Linux)
+```bash (Mac tested)
+./start.command
+```
+
+Windows (PowerShell-Not tested):
+
+```powershell
+.\start.ps1
+```
+
+Windows (Command Prompt) - Not Tested:
+
+```bat
+start.bat
 ```
 
 The script will:
 
 1. Check if required ports are occupied.
-2. Force free API/UI ports when needed.
+2. Ask for confirmation before freeing API/UI ports when needed.
 3. Create Python virtual environment if missing.
 4. Install backend dependencies from `backend/requirements.txt`.
 5. Install frontend dependencies with `npm install`.
@@ -76,13 +90,14 @@ Ports:
 
 ## 3. How To Use App
 
-1. Before running, confirm whether you want to free occupied ports (`8000` and `5173`), then run `./start.command`.
-2. Open `http://127.0.0.1:5173` in your browser.
-3. In **Current Match**, pick the point winner (`A` or `B`).
-4. Click **Submit Winner** for each point.
-5. Continue until match winner is reached by rules.
-6. View score/winner and summary table.
-7. Use **Clear All** to reset score and summary.
+1. Start the app on Mac/Linux with `./start.command`, on Windows PowerShell with `.\start.ps1`, or on Windows CMD with `start.bat`.
+2. If ports `8000` or `5173` are already in use, confirm port cleanup when prompted.
+3. Open `http://127.0.0.1:5173` in your browser.
+4. In **Current Match**, pick the point winner (`A` or `B`).
+5. Click **Submit Winner** for each point.
+6. Continue until match winner is reached by rules.
+7. View score/winner and summary table.
+8. Use **Clear All** to reset score and summary.
 
 ## 4. Logic
 
